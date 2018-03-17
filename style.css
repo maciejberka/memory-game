@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  min-width: 700px;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  width: 450px;
+  height: 40px;
+  background-color: antiquewhite;
+  margin: 5px auto;
+}
+
+.board {
+  display: flex;
+  width: 450px;
+  height: 450px;
+  background-color: aqua;
+  flex-wrap: wrap;
+}
+
+body, .board {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  min-width: 100px;
+  height: 100px;
+  background-color: brown;
+  border: 1px solid black;
+  margin: auto;
+}
