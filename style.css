@@ -26,7 +26,7 @@ body {
   display: flex;
   width: 80vh;
   height: 80vh;
-  background-color: aqua;
+  background-color: black;
   flex-wrap: wrap;
   margin: 10px auto auto;
 }
@@ -39,6 +39,16 @@ body {
   margin: auto;
 }
 
+.green {
+  background-color: green;
+}
+
+/*
+.card:przenieść do js {
+  transform: rotateY(180deg);
+  transition: 0.5s;
+}
+*/
 
 /*RESPONSIVE*/
 

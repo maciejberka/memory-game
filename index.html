@@ -5,12 +5,23 @@
   <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0">
   <title>Memory Game | Maciej Berka</title>
   <link rel="stylesheet" href="style.css" type="text/css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 
 <body>
   
   <section class="menu">
+    <span class="star first-star"><i class="fas fa-star"></i></span>
+    <span class="star second-star"><i class="fas fa-star"></i></span>
+    <span class="star third-star"><i class="fas fa-star"></i></span>
     
+    <span class="moves-counter">0</span>
+    <span class="text">moves</span>
+    
+    <span class="time">0</span>
+    <span class="text">seconds</span>
+    
+    <button class="reset-button">Reset game</button>
   </section>
   
   <main class="board">
@@ -34,10 +45,6 @@
     <div class="card"></div>
     <div class="card"></div>
   </main>
-  
-  <footer>
-    
-  </footer>
   
   <script src="app.js"></script>    
 </body>
