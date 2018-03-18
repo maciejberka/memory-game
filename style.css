@@ -32,10 +32,16 @@ body {
 }
 
 .card {
+  display: flex;
   min-width: 19vh;
   height: 19vh;
   background-color: brown;
   border: 1px solid black;
+  margin: auto;
+  font-size: 4rem;
+}
+
+.icon {
   margin: auto;
 }
 
