@@ -16,10 +16,10 @@ body {
 }
 
 .menu {
-  width: 100%;
+  width: 80vh;
   height: 40px;
   background-color: antiquewhite;
-  margin: 5px auto;
+  margin: auto auto 0;
 }
 
 .board {
@@ -28,7 +28,7 @@ body {
   height: 80vh;
   background-color: aqua;
   flex-wrap: wrap;
-  margin: auto;
+  margin: 10px auto auto;
 }
 
 .card {
@@ -43,6 +43,10 @@ body {
 /*RESPONSIVE*/
 
 @media only screen and (max-width: 540px){
+  .menu {
+    width: 60vh;
+  }
+  
   .board {
     width: 60vh;
     height: 60vh;
@@ -55,6 +59,10 @@ body {
 }
 
 @media only screen and (max-width: 460px){
+  .menu {
+    width: 50vh;
+  }
+  
   .board {
     width: 50vh;
     height: 50vh;
