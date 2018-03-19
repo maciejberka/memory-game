@@ -102,13 +102,40 @@ function shuffle() {
       counter = counter + 1;
     } else {
         chooseRandomNumber();
-    }  
+    }
   }
   counter = 0;
 }
 
 shuffle();
 
-//const restartButton = document.querySelector(".reset-button");
-//
-//document.body.addEventListener("click", shuffle);
+const icons = document.querySelectorAll(".icon");
+
+function reset() {
+  for(let i = 0; i < card.length; i++){
+    card[i].classList.remove("already-chosen");
+  }
+shuffle();
+}
+
+const restartButton = document.querySelector(".reset-button");
+
+restartButton.addEventListener("click", reset);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
