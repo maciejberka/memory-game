@@ -1,5 +1,7 @@
 const card = document.querySelectorAll(".card")
 let randomNumber;
+let firstCard;
+let secondCard;
 
 function chooseRandomNumber() {
  //get random number from 0 to 15  
@@ -109,13 +111,14 @@ function shuffle() {
 
 shuffle();
 
-const icons = document.querySelectorAll(".icon");
+let icons = document.querySelectorAll(".icon");
 
 function reset() {
   for(let i = 0; i < card.length; i++){
     card[i].classList.remove("already-chosen");
   }
-shuffle();
+  shuffle();
+  icons = document.querySelectorAll(".icon");
 }
 
 const restartButton = document.querySelector(".reset-button");
@@ -123,6 +126,16 @@ const restartButton = document.querySelector(".reset-button");
 restartButton.addEventListener("click", reset);
 
 
+for(let i = 0; i < 16; i++){
+  card[i].addEventListener("click", ()=>{
+    if(firstCard === undefined){
+      firstCard = card[i];
+    } else {
+      secondCard = card[i];
+    }
+    card[i].firstChild.style.visibility = "visible";
+  });
+}
 
 
 

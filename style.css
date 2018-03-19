@@ -43,11 +43,9 @@ body {
 
 .icon {
   margin: auto;
+  visibility: hidden;
 }
 
-.green {
-  color: green;
-}
 
 /*
 .card:przenieść do js {
