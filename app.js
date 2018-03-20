@@ -126,16 +126,37 @@ const restartButton = document.querySelector(".reset-button");
 restartButton.addEventListener("click", reset);
 
 
-for(let i = 0; i < 16; i++){
-  card[i].addEventListener("click", ()=>{
+  for(let i = 0; i < 16; i++){
+  card[i].addEventListener("click", function getCard(){
     if(firstCard === undefined){
       firstCard = card[i];
     } else {
       secondCard = card[i];
     }
+    
+    function noPair() {
+      firstCard.firstChild.style.visibility = "hidden";
+      secondCard.firstChild.style.visibility = "hidden";
+      firstCard = undefined;
+      secondCard = undefined;
+    }
+    
+    function pair() {
+      
+    }
+    
     card[i].firstChild.style.visibility = "visible";
+    if(firstCard.firstChild.classList[1] === secondCard.firstChild.classList[1]){
+      setTimeout(pair, 500);
+      console.log("para");
+    } else {
+      setTimeout(noPair, 1000);
+      console.log("nope");
+    }
   });
 }
+
+
 
 
 
