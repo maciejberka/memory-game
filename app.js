@@ -114,12 +114,12 @@ shuffle();
 let icons = document.querySelectorAll(".icon");
 
 function reset() {
-  
   for(let i = 0; i < card.length; i++){
     card[i].classList.remove("already-chosen");
     card[i].classList.remove("already-matched");
     card[i].classList.remove("unclickable");
   }
+  
   firstCard = undefined;
   secondCard = undefined;
   shuffle();
@@ -133,30 +133,25 @@ restartButton.addEventListener("click", reset);
 
 for(let i = 0; i < 16; i++){
   if(!card[i].classList.contains("already-matched")){
-    card[i].addEventListener("click", function getCard(){
-    if(firstCard === undefined){
-      firstCard = card[i];
+    card[i].addEventListener("click", ()=>{
+      if(firstCard === undefined){
+        firstCard = card[i];
+      } else {
+          secondCard = card[i];
+        }
+
+    card[i].firstChild.style.visibility = "visible";
+    if(firstCard.firstChild.classList[1] === secondCard.firstChild.classList[1]){
+      setTimeout(pair, 500);
     } else {
-        secondCard = card[i];
-    }
+        setTimeout(noPair, 1000);
+      }
     
-   
-   
-          
-  card[i].firstChild.style.visibility = "visible";
-  if(firstCard.firstChild.classList[1] === secondCard.firstChild.classList[1]){
-    setTimeout(pair, 500);
-  } else {
-      setTimeout(noPair, 1000);
-    }
-    
-   for(let a = 0; a < 16; a++){
-    card[a].classList.add("unclickable");
+    for(let a = 0; a < 16; a++){
+      card[a].classList.add("unclickable");
+    }  
+    });
   }  
-    
-  });
-  }
-  
 }
 
 function noPair() {
