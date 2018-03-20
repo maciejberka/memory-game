@@ -4,8 +4,10 @@ let firstCard;
 let secondCard;
 let inTheGame = false;
 let moves = 0;
+let seconds = 0;
 
 const movesCounter = document.querySelector(".moves-counter");
+const timeCounter = document.querySelector(".time");
 
 function chooseRandomNumber() {
  //get random number from 0 to 15  
@@ -123,8 +125,15 @@ function reset() {
     card[i].classList.remove("already-matched");
     card[i].classList.remove("unclickable");
   }
+  //reset moves things
   moves = 0;
   movesCounter.textContent = 0;
+  
+  //reset time things
+  seconds = 0;
+  inTheGame = false;
+  timeCounter.textContent = 0;
+  
   firstCard = undefined;
   secondCard = undefined;
   shuffle();
@@ -138,12 +147,14 @@ restartButton.addEventListener("click", reset);
 
 //function to showing cards and check if they are pair or not
 for(let i = 0; i < 16; i++){
-  inTheGame = true;
   //if card wasn't matched yet
   if(!card[i].classList.contains("already-matched")){
     card[i].addEventListener("click", ()=>{
       //get selected card to the right variable
       if(firstCard === undefined){
+        
+        inTheGame = true;
+        
         //increment and display moves
         moves = moves + 1;
         movesCounter.textContent = moves;
@@ -207,6 +218,17 @@ function pair() {
     }   
   }
 }
+
+//function to count the time
+function time(){
+  //if game is started
+  if(inTheGame){
+    seconds = seconds + 1;
+    timeCounter.textContent = seconds;
+  }
+}
+
+setInterval(time, 1000);
 
 
 
