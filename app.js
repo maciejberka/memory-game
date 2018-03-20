@@ -2,6 +2,10 @@ const card = document.querySelectorAll(".card")
 let randomNumber;
 let firstCard;
 let secondCard;
+let inTheGame = false;
+let moves = 0;
+
+const movesCounter = document.querySelector(".moves-counter");
 
 function chooseRandomNumber() {
  //get random number from 0 to 15  
@@ -119,7 +123,8 @@ function reset() {
     card[i].classList.remove("already-matched");
     card[i].classList.remove("unclickable");
   }
-  
+  moves = 0;
+  movesCounter.textContent = 0;
   firstCard = undefined;
   secondCard = undefined;
   shuffle();
@@ -133,11 +138,16 @@ restartButton.addEventListener("click", reset);
 
 //function to showing cards and check if they are pair or not
 for(let i = 0; i < 16; i++){
+  inTheGame = true;
   //if card wasn't matched yet
   if(!card[i].classList.contains("already-matched")){
     card[i].addEventListener("click", ()=>{
       //get selected card to the right variable
       if(firstCard === undefined){
+        //increment and display moves
+        moves = moves + 1;
+        movesCounter.textContent = moves;
+        
         firstCard = card[i];
         firstCard.classList.add("unclickable");
       } else {
@@ -149,16 +159,16 @@ for(let i = 0; i < 16; i++){
     //if chosen cards is pair
     if(firstCard !== undefined && secondCard !== undefined){
       if(firstCard.firstChild.classList[1] === secondCard.firstChild.classList[1]){
-      setTimeout(pair, 500);
-    } else {
-        setTimeout(noPair, 1000);
-      }
+        setTimeout(pair, 500);
+      } else {
+          setTimeout(noPair, 1000);
+        }
       
       //block showing cards
-    for(let a = 0; a < 16; a++){
-      card[a].classList.add("unclickable");
-    } 
-    }  
+      for(let a = 0; a < 16; a++){
+        card[a].classList.add("unclickable");
+      }  
+     }  
     
      
     });
@@ -197,8 +207,6 @@ function pair() {
     }   
   }
 }
-
-
 
 
 
