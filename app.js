@@ -139,21 +139,28 @@ for(let i = 0; i < 16; i++){
       //get selected card to the right variable
       if(firstCard === undefined){
         firstCard = card[i];
+        firstCard.classList.add("unclickable");
       } else {
           secondCard = card[i];
+          secondCard.classList.add("unclickable");
         }
     //show chosen cards
     card[i].firstChild.style.visibility = "visible";
-    //if chosen cards is pair 
-    if(firstCard.firstChild.classList[1] === secondCard.firstChild.classList[1]){
+    //if chosen cards is pair
+    if(firstCard !== undefined && secondCard !== undefined){
+      if(firstCard.firstChild.classList[1] === secondCard.firstChild.classList[1]){
       setTimeout(pair, 500);
     } else {
         setTimeout(noPair, 1000);
       }
-    //block showing cards
+      
+      //block showing cards
     for(let a = 0; a < 16; a++){
       card[a].classList.add("unclickable");
+    } 
     }  
+    
+     
     });
   }  
 }
