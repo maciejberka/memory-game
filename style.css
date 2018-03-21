@@ -29,12 +29,12 @@ body {
 
 .star {
   margin: auto 2px;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .menu p {
   margin: auto;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
 }
 
 .reset-button {
@@ -43,6 +43,7 @@ body {
   margin: auto 5px auto auto;
   cursor: pointer;
   border: none;
+  font-size: 1.7rem;
 }
 
 .reset-button:hover {
