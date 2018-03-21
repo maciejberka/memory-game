@@ -20,6 +20,7 @@ body {
   height: 40px;
   background-color: antiquewhite;
   margin: auto auto 0;
+  display: flex;
 }
 
 .board {
@@ -78,6 +79,10 @@ body {
   height: 30px;
   border: none;
   margin: 30px auto auto;
+}
+
+.invisible {
+  visibility: hidden;
 }
 
 /*

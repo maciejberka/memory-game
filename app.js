@@ -10,6 +10,8 @@ let pairs = 0;
 const movesCounter = document.querySelector(".moves-counter");
 const timeCounter = document.querySelector(".time");
 const winWindow = document.querySelector(".win-window");
+const secondStar = document.querySelectorAll(".second-star");
+const thirdStar = document.querySelectorAll(".third-star");
 const movesSummary = document.querySelector(".moves-summary");
 const timeSummary = document.querySelector(".time-summary");
 const playAgainButton = document.querySelector(".play-again-button");
@@ -133,6 +135,12 @@ function reset() {
   
   pairs = 0;
   
+  //make all starts visible again
+  thirdStar[0].classList.remove("invisible");
+  thirdStar[1].classList.remove("invisible");
+  secondStar[0].classList.remove("invisible");
+  secondStar[1].classList.remove("invisible");
+  
   //reset moves things
   moves = 0;
   movesCounter.textContent = 0;
@@ -166,6 +174,17 @@ for(let i = 0; i < 16; i++){
         //increment and display moves
         moves = moves + 1;
         movesCounter.textContent = moves;
+        
+        //hide stars after 15 and 30 moves
+        if(moves > 15){
+          thirdStar[0].classList.add("invisible");
+          thirdStar[1].classList.add("invisible");
+        } 
+        
+        if(moves > 30){
+          secondStar[0].classList.add("invisible");
+          secondStar[1].classList.add("invisible");
+        }
         
         firstCard = card[i];
         firstCard.classList.add("unclickable");
