@@ -5,9 +5,14 @@ let secondCard;
 let inTheGame = false;
 let moves = 0;
 let seconds = 0;
+let pairs = 0;
 
 const movesCounter = document.querySelector(".moves-counter");
 const timeCounter = document.querySelector(".time");
+const winWindow = document.querySelector(".win-window");
+const movesSummary = document.querySelector(".moves-summary");
+const timeSummary = document.querySelector(".time-summary");
+const playAgainButton = document.querySelector(".play-again-button");
 
 function chooseRandomNumber() {
  //get random number from 0 to 15  
@@ -125,6 +130,9 @@ function reset() {
     card[i].classList.remove("already-matched");
     card[i].classList.remove("unclickable");
   }
+  
+  pairs = 0;
+  
   //reset moves things
   moves = 0;
   movesCounter.textContent = 0;
@@ -205,6 +213,15 @@ function noPair() {
 }
     
 function pair() {
+  pairs = pairs + 1;
+  if(pairs === 8){
+    inTheGame = false;
+    movesSummary.textContent = moves;
+    timeSummary.textContent = seconds;
+    
+    winWindow.style.display = "flex";
+  }
+  
   //mark cards as already-matched
   firstCard.classList.add("already-matched");
   secondCard.classList.add("already-matched");
@@ -230,7 +247,10 @@ function time(){
 
 setInterval(time, 1000);
 
-
+playAgainButton.addEventListener("click", ()=>{
+  winWindow.style.display = "none";
+  reset();
+});
 
 
 
