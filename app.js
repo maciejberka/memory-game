@@ -166,6 +166,7 @@ for(let i = 0; i < 16; i++){
   //if card wasn't matched yet
   if(!card[i].classList.contains("already-matched")){
     card[i].addEventListener("click", ()=>{
+      
       //get selected card to the right variable
       if(firstCard === undefined){
         
@@ -192,8 +193,11 @@ for(let i = 0; i < 16; i++){
           secondCard = card[i];
           secondCard.classList.add("unclickable");
         }
+      
     //show chosen cards
     card[i].firstChild.style.visibility = "visible";
+      
+    
     //if chosen cards is pair
     if(firstCard !== undefined && secondCard !== undefined){
       if(firstCard.firstChild.classList[1] === secondCard.firstChild.classList[1]){
@@ -228,6 +232,7 @@ function noPair() {
       //allow to click at card
       card[a].classList.remove("unclickable");
     }
+    
   }
 }
     
