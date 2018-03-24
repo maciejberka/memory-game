@@ -47,7 +47,7 @@ function shuffle() {
   while(counter !== 2){
     if(!card[randomNumber].classList.contains("already-chosen")){
       card[randomNumber].classList.add("already-chosen");
-      card[randomNumber].innerHTML = "<i class='fab fa-bitcoin icon'></i>";
+      card[randomNumber].innerHTML = "<i class='fas fa-at'></i>";
       counter = counter + 1;
     } else {
         chooseRandomNumber();
@@ -80,7 +80,7 @@ function shuffle() {
   while(counter !== 2){
     if(!card[randomNumber].classList.contains("already-chosen")){
       card[randomNumber].classList.add("already-chosen");
-      card[randomNumber].innerHTML = "<i class='fab fa-codepen icon'></i>";
+      card[randomNumber].innerHTML = "<i class='fab fa-google'></i>";
       counter = counter + 1;
     } else {
         chooseRandomNumber();
