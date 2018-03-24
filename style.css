@@ -158,4 +158,12 @@ body {
     min-width: 11.5vh;
     height: 11.5vh;
   }
+  
+  .menu p {
+    font-size: 1.5rem;
+}
+
+  .reset-button {
+    font-size: 1.5rem;
+  }
 }
